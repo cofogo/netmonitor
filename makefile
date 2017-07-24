@@ -1,12 +1,15 @@
 all:
-	g++ src/*.cpp -I inc -o client
-	gcc src/server.c -I inc -o server
+	g++ src/server/server.c -I inc -o server
+	g++ src/client/*.cpp -I inc -o client
 
 server:
-	gcc src/server.c -I inc -o server
+	g++ src/server/server.cpp -I inc -o server
 
 client:
-	g++ src/*.cpp -I inc -o client
+	g++ src/client/*.cpp -I inc -o client
+
+pngtest:
+	g++ src/pngwriter_tst.cpp -o pngtest `freetype-config --cflags` -Iinc -Llib -lpng -lpngwriter -lz -lfreetype
 
 clean:
 	rm -v server
