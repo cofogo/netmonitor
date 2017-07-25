@@ -123,7 +123,7 @@ int main(int argc, char* const argv[]) {
       sprintf(buf, "%d", nl_event.get_index());
       data_stream << "results for " << nl_event.get_iface() << 
         "(" << string(buf) << ")" << endl;
-      data_stream << "  running: " << 
+      data_stream << "  connected: " << 
         string(nl_event.get_running() ? "yes" : "no") << endl;
       data_stream << "  enabled: " << 
         string(nl_event.get_enabled() ? "yes" : "no") << endl;
